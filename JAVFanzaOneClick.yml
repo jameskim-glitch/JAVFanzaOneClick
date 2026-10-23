@@ -1,0 +1,62 @@
+name: JAV FANZA OneClick
+description: FANZA Korean metadata, missing performer portraits and studio logos, and existing SubtitleCat Korean subtitles. Never generates subtitles.
+version: 1.12.0
+exec:
+  - jav_fanza_oneclick.exe
+interface: raw
+errLog: warning
+tasks:
+  - name: 폴더 태그 누락 검사
+    description: 라이브러리 폴더 이름과 일치하는 기존 태그의 누락을 확인합니다. 정보를 변경하지 않습니다.
+    defaultArgs:
+      mode: folder_tags_bulk
+      dry_run: true
+  - name: 폴더 태그 누락 채우기
+    description: 전체 백업 후 폴더 이름과 일치하는 기존 태그만 추가합니다. 기존 태그와 영상 정보는 보존합니다.
+    defaultArgs:
+      mode: folder_tags_bulk
+  - name: 제작사 이름·StashDB 연결 정리
+    description: 일본어 이름·별칭을 StashDB 제작사 목록과 대조해 공식 이름과 출처를 연결합니다. 이전 이름은 별칭으로 보관합니다.
+    defaultArgs:
+      mode: studio_sync_run
+      confirmed: true
+  - name: 동일 StashDB 제작사 병합
+    description: 전체 백업 후 같은 StashDB ID로 확인된 중복 제작사를 합치고 장면·이미지·갤러리·그룹 연결을 옮깁니다.
+    defaultArgs:
+      mode: studio_sync_run
+      confirmed: true
+      merge_duplicates: true
+  - name: 영문 별명으로 이름 변경 후 StashDB 재스크래핑
+    description: 기존 영문 별명을 이름으로 올리고 StashDB에서 배우 정보를 다시 가져옵니다. 원래 이름은 별명으로 보관하고 기존 사진은 보존합니다.
+    defaultArgs:
+      mode: stashdb_alias_run
+      confirmed: true
+      photo_policy: missing
+  - name: 전체 미처리 장면 채우기
+    description: 품번이 있는 장면의 표지와 메타데이터를 채우고 제목·배우·내용을 한국어로 정리합니다.
+    defaultArgs:
+      mode: bulk
+  - name: 배우 사진·제작사 로고 빈 항목 채우기
+    description: 기존 이미지를 보존하고 StashDB와 FANZA에서 확인된 빈 배우 사진·제작사 로고를 채웁니다.
+    defaultArgs:
+      mode: images_bulk
+  - name: 배우 이름 발음 기준 정리
+    description: FANZA의 공식 읽는 법으로 로마자·한국어 이름을 만들고 이전 자동 번역 이름을 교정합니다. 사용자가 수정한 이름과 장면 정보는 보존합니다.
+    defaultArgs:
+      mode: names_bulk
+hooks:
+  - name: 새 장면 폴더 태그 추가
+    description: 새 장면의 라이브러리 폴더 이름과 일치하는 기존 태그를 추가합니다. 메타데이터 조회와 별도로 실행됩니다.
+    triggeredBy:
+      - Scene.Create.Post
+    defaultArgs:
+      mode: folder_tags_scene
+  - name: 새 장면 자동 채우기
+    description: Stash 스캔으로 만들어진 새 장면을 자동으로 처리합니다.
+    triggeredBy:
+      - Scene.Create.Post
+    defaultArgs:
+      mode: hook
+ui:
+  javascript:
+    - jav_fanza_oneclick.js
