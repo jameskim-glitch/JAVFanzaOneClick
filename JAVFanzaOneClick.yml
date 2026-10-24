@@ -1,6 +1,6 @@
 name: JAV FANZA OneClick
 description: FANZA Korean metadata, missing performer portraits and studio logos, and existing SubtitleCat Korean subtitles. Never generates subtitles.
-version: 1.12.0
+version: 1.12.1
 exec:
   - jav_fanza_oneclick.exe
 interface: raw

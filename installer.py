@@ -11,13 +11,17 @@ import tempfile
 from pathlib import Path
 
 
-VERSION = "1.12.0"
+VERSION = "1.12.1"
 PLUGIN_ID = "JAVFanzaOneClick"
 PAYLOAD_FILES = (
     "JAVFanzaOneClick.yml",
     "jav_fanza_oneclick.exe",
     "jav_fanza_oneclick.js",
     "README_KO.md",
+    "README.md",
+    "THIRD_PARTY.md",
+    "THIRD_PARTY_NOTICES.txt",
+    "BUILD_INFO.json",
 )
 
 

@@ -30,7 +30,7 @@ import studio_sync
 import folder_tags
 
 
-VERSION = "1.12.0"
+VERSION = "1.12.1"
 PLUGIN_ID = "JAVFanzaOneClick"
 PAGE_SIZE = 100
 TRANSLATION_REVISION = 2
@@ -138,7 +138,7 @@ class StateStore:
             if not isinstance(data, dict):
                 return False
             # Subtitles and entity images do not invalidate completed scene text.
-            return data.get("version") in {"1.3.1", "1.4.0", "1.4.1", "1.5.0", "1.6.0", "1.7.0", "1.7.1", "1.8.0", "1.9.0", "1.9.1", "1.10.0", "1.11.0", VERSION} and data.get("code") == code and bool(data.get("complete"))
+            return data.get("version") in {"1.3.1", "1.4.0", "1.4.1", "1.5.0", "1.6.0", "1.7.0", "1.7.1", "1.8.0", "1.9.0", "1.9.1", "1.10.0", "1.11.0", "1.12.0", VERSION} and data.get("code") == code and bool(data.get("complete"))
         except (OSError, ValueError, TypeError):
             return False
 

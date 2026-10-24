@@ -1,4 +1,8 @@
-# JAV FANZA OneClick 1.12.0
+# JAV FANZA OneClick 1.12.1
+
+1.12.1은 배포 구성 개선 버전입니다. 공식 Python 3.13.17 환경, 파일 허용 목록,
+외부 라이브러리 원문 고지(`THIRD_PARTY_NOTICES.txt`), 빌드 정보와 SHA-256 체크섬을 사용합니다.
+자체 제작 EXE는 전자서명되지 않았습니다. 보안 기능을 끄지 말고 출처와 해시를 확인하세요.
 
 공개용 소스에서는 외부 제작사별 CID 변환표를 제거하고 일반 품번 형식과 FANZA 검색 응답으로 식별번호를 확인합니다. 제작사별 예외·접미사·Blu-ray 품번의 검색률은 기존 설치본과 다를 수 있습니다. 자세한 변경점은 [README](README.md)를 참고하세요.
 
@@ -6,7 +10,7 @@ Windows 64비트용 단일 Stash 플러그인입니다. 별도의 Python, Stash 
 
 ## 설치
 
-1. 설치 프로그램 `JAVFanzaOneClick_Setup_1.12.0_Windows_x64.exe`를 실행합니다. 기존 버전 위에 설치해도 캐시와 설정은 보존됩니다. ZIP을 사용하는 경우 `JAVFanzaOneClick` 폴더를 Stash의 플러그인 폴더에 복사합니다. 기본 경로는 `%USERPROFILE%\.stash\plugins`입니다.
+1. 빌드된 설치 프로그램 `JAVFanzaOneClick_Setup_1.12.1_Windows_x64.exe`를 실행합니다. 기존 버전 위에 설치해도 캐시와 설정은 보존됩니다. ZIP을 사용하는 경우 `JAVFanzaOneClick` 폴더를 Stash의 플러그인 폴더에 복사합니다. 기본 경로는 `%USERPROFILE%\.stash\plugins`입니다.
 2. Stash에서 **Settings → Plugins → Reload Plugins**를 누릅니다.
 3. 화면을 새로고침합니다. 새로 스캔되어 생성되는 장면은 자동으로 처리됩니다.
 

@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const VERSION = "1.12.0";
+  const VERSION = "1.12.1";
   window.__javFanzaOneClick?.dispose();
   let disposed = false;
   const PLUGIN_ID = "JAVFanzaOneClick";
