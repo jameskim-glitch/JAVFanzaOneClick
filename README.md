@@ -1,7 +1,7 @@
 # JAV FANZA OneClick
 
 Stash용 한국어 메타데이터·표지·배우 사진·제작사 로고·폴더 태그 플러그인입니다.
-소스 공개 버전: **1.12.1**. 기존 개인 설치본과 분리해 개발합니다.
+공개 버전: **1.12.1**. 기존 개인 설치본과 분리해 개발합니다.
 
 ## 기능
 
@@ -14,9 +14,15 @@ Stash용 한국어 메타데이터·표지·배우 사진·제작사 로고·폴
 
 ## 설치
 
-현재 저장소에는 **소스만 공개**되어 있으며 설치용 EXE·ZIP 릴리스는 아직 없습니다.
-GitHub의 **Download ZIP**은 소스 묶음이므로
-플러그인 폴더에 복사하는 것만으로 설치되지 않습니다. 직접 빌드하려면 아래 절차를 따르세요.
+[1.12.1 릴리스 다운로드](https://github.com/jameskim-glitch/JAVFanzaOneClick/releases/tag/v1.12.1)에서
+Windows x64용 설치 파일과 수동 설치 ZIP, `SHA256SUMS.txt`를 제공합니다.
+
+- 간편 설치: `JAVFanzaOneClick_Setup_1.12.1_Windows_x64.exe`
+- 수동 설치: `JAVFanzaOneClick_1.12.1_Windows_x64.zip`
+
+GitHub의 **Code → Download ZIP** 및 릴리스의 **Source code**는 소스 묶음으로,
+설치용 ZIP과 다릅니다. 일반 사용자는 Python이나 별도 Chrome 확장 프로그램을 설치할 필요가 없습니다.
+실행 파일은 전자서명되지 않았으며 Windows 경고가 나타날 수 있습니다. 보안 기능을 끄지 마세요.
 
 Windows x64용 설치 파일을 사용하는 구성이 기본입니다. Python으로 실행하려면
 별도의 의존성 설치와 플러그인 실행 명령 변경이 필요합니다.
